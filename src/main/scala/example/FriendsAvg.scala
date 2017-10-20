@@ -18,7 +18,7 @@ object FriendsAvg extends App{
   val ageSumFriends = ageCounts.mapValues(friendsCount => (friendsCount,1))
     .reduceByKey((pair1,pair2) => (pair1._1+pair2._1,pair1._2+pair2._2))
 //
-   val avgByAge = ageSumFriends.mapValues(pair => pair._1/pair._2 ).saveAsTextFile("result.csv")
+   val avgByAge = ageSumFriends.mapValues(pair => pair._1/pair._2 ).sortByKey().saveAsTextFile("result.csv")
 
 
 
