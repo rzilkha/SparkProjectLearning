@@ -23,6 +23,7 @@ dependencies {
     compile "org.scala-lang:scala-reflect:"+rootProject.ext.scalaVersion
     compile "org.scala-lang:scala-compiler:"+rootProject.ext.scalaVersion
 
+    compile group: 'com.sparkjava', name: 'spark-core', version: '1.0'
     compile 'org.apache.spark:spark-mllib_2.11:2.1.0'
     compile 'org.apache.spark:spark-sql_2.11:2.1.0'
     compile 'org.apache.spark:spark-streaming-flume-assembly_2.11:2.1.0'
