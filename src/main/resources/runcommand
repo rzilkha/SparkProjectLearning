@@ -4,3 +4,5 @@ spark-submit --class example.RatingExampleJava  SparkProject-1.0-SNAPSHOT.jar
 
 spark-submit --class example.FriendsAvg  SparkProject-1.0-SNAPSHOT.jar
 spark-submit --class example.MinWeather  SparkProject-1.0-SNAPSHOT.jar
+
+spark-submit --class example.TotalAmountByCustomer  SparkProject-1.0-SNAPSHOT.jar
