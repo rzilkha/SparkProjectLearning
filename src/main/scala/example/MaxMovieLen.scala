@@ -42,7 +42,7 @@ object MaxMovieLen {
       case (id, appearances) => (appearances, id)
     }.sortByKey(ascending = false);
 
-    rdd.saveAsTextFile("check")
+    rdd.saveAsTextFile("check.txt")
   }
 
 }

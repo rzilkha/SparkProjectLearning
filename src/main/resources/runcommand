@@ -8,3 +8,5 @@ spark-submit --class example.MinWeather  SparkProject-1.0-SNAPSHOT.jar
 spark-submit --class example.TotalAmountByCustomer  SparkProject-1.0-SNAPSHOT.jar
 
 spark-submit --class example.MaxMovieLen  SparkProject-1.0-SNAPSHOT.jar
+
+spark-submit --class example.FindDegreeOfRelation  SparkProject-1.0-SNAPSHOT.jar
