@@ -14,11 +14,11 @@ object FindDegreeOfRelation extends App {
   def src:Int = 5306
   def dst:Int = 14
 
-  var hitCount: LongAccumulator = null
+  var hitCount: LongAccumulator = _
 
-  def initialParse(line: String): Tuple2[Int, Tuple3[List[Int], String, Int]] = {
+  def initialParse(line: String): (Int, Tuple3[List[Int], String, Int]) = {
     val arr = line.split(" ")
-    val characterId = arr(0).toInt;
+    val characterId = arr(0).toInt
     val friends = arr.slice(1, arr.length).map(number => number.toInt).toList
 
     var color = "WHITE"
@@ -28,7 +28,7 @@ object FindDegreeOfRelation extends App {
       distance = 0
     }
 
-    return (characterId, (friends, color, distance))
+    (characterId, (friends, color, distance))
   }
 
 
@@ -53,7 +53,7 @@ object FindDegreeOfRelation extends App {
     val originalRecord = (characterId, (friends, newColor, distance))
     listBuf += originalRecord
 
-    return listBuf.toList
+    listBuf.toList
 
   }
 
@@ -63,10 +63,10 @@ object FindDegreeOfRelation extends App {
 
     var friends = List[Int]()
 
-    if (friends1.size > 0) {
+    if (friends1.nonEmpty) {
       friends = friends++friends1
     }
-    if (friends2.size > 0) {
+    if (friends2.nonEmpty) {
       friends = friends++friends2
     }
 
@@ -79,14 +79,14 @@ object FindDegreeOfRelation extends App {
 
     var distance = Math.min(distance1, distance2)
 
-    return (friends, color, distance)
+    (friends, color, distance)
 
   }
 
   override def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("example")
     val sc = new SparkContext(conf)
-    hitCount = sc.longAccumulator("found");
+    hitCount = sc.longAccumulator("found")
 
     var iterationRdd = sc.textFile("Marvel-Graph.txt").map(initialParse)
    // iterationRdd.saveAsTextFile("te.txt")
