@@ -8,7 +8,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object MovieSimilarities {
 
   def parse(line: String): Tuple2[String, Tuple2[Int, Double]] = {
-    val arr = line.split("\\|")
+    val arr = line.split("\t")
     val user = arr(0)
     val movie = arr(1).toInt
     var rating = arr(2).toDouble
