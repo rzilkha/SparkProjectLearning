@@ -39,9 +39,9 @@ object MovieSimilarities {
 
     var count = 0
     for ((ratingX, ratingY) <- ratings) {
-      sum_xx += ratingX * ratingX
-      sum_yy += ratingY * ratingY
-      sum_xy += ratingX * ratingY
+      sum_xx += ratingX.toInt * ratingX.toInt
+      sum_yy += ratingY.toInt * ratingY.toInt
+      sum_xy += ratingX.toInt * ratingY.toInt
       count += 1
     }
 
@@ -63,7 +63,7 @@ object MovieSimilarities {
 
     val scoreThreshold = 0.97
     val apperancesOfPair = 50
-    val movieId = 123
+    val movieId = 50
 
 
     val rdd = sc.textFile("u.data").map(parse);
