@@ -12,3 +12,7 @@ spark-submit --class example.MaxMovieLen  SparkProject-1.0-SNAPSHOT.jar
 spark-submit --class example.FindDegreeOfRelation  SparkProject-1.0-SNAPSHOT.jar
 
 spark-submit --class example.MovieSimilarities  SparkProject-1.0-SNAPSHOT.jar
+
+
+
+spark-submit --jars csd-connector.jar --class example.SqlToCassandra  SparkProject-1.0-SNAPSHOT.jar
